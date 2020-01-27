@@ -1,15 +1,12 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
+
+	"github.com/ibadsiddiqui/APIs-For-Shahrukh/src/handlers"
 )
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Welcome!")
-}
-
 func main() {
-	http.HandleFunc("/", handler)
+	http.HandleFunc("/", handlers.IndexHandler)
 	http.ListenAndServe(":8080", nil)
 }
